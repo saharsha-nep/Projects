@@ -62,26 +62,4 @@ plt.plot(result.history['val_accuracy'], label='Validation Accuracy', color='blu
 plt.legend()
 plt.show()
 
-#Test1
-img = cv2.imread("dog.test.jpg")
-resize = tf.image.resize(img,(256,256))
-plt.imshow(resize.numpy().astype(int))
-plt.show()
-
-yhat = model.predict(np.expand_dims(resize/255,0))
-if yhat[0][0] > 0.5:
-    print("it's a dog")
-else:
-    print("it's a cat")
-
-#Test2
-img = cv2.imread("cat.test.jpg")
-resize = tf.image.resize(img,(256,256))
-plt.imshow(resize.numpy().astype(int))
-plt.show()
-
-yhat = model.predict(np.expand_dims(resize/255,0))
-if yhat[0][0] > 0.5:
-    print("it's a dog")
-else:
-    print("it's a cat")
+model.save("cat_dog_model.h5")
