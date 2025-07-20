@@ -1,1 +1,1 @@
-Projects made by me
+minor projects made by me
